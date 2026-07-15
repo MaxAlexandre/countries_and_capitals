@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    echo 'AUUUUUUUU';
-});
+//start game
+Route::get('/', [MainController::class, 'startGame'])->name('startGame');
+Route::post('/', [MainController::class, 'prepareGame'])->name('prepareGame');
